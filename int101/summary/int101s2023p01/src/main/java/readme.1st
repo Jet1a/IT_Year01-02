@@ -1,0 +1,20 @@
+base
+ - Ch01DataTypeDemo.java
+   -- use of primitive data types, literal forms, and variables
+ - Ch02OperatorDemo.java
+   -- use of operators: arithmetic, boolean, bitwise, 
+      relational (comparison), equality, type casting
+ - Ch03PrecedenceDemo.java
+   -- precedence and associativity of operators
+ - Ch04UtilityClassDemo.java
+   -- creation and use of utility classes
+ - Ch05ObjectClassDemo.java
+   -- creation and use of classes and objects
+ch04
+ - Ch04Helper.java
+   -- utility class for base\Ch04UtilityClass.java
+ch05
+ - Ch05Circle.java
+   -- simple class/object
+ - Ch05Donut.java
+   -- complex class/object
