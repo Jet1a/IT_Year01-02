@@ -36,7 +36,7 @@ public class Person {
     private String firstname;
     private String lastname;
 
-    public Person(String firstname, String lastname){
+    public Person(String firstname, String lastname) {
         Utilitor utilitor = new Utilitor();
         this.firstname = utilitor.testString(firstname);
         this.lastname = utilitor.testString(lastname);
@@ -45,6 +45,14 @@ public class Person {
 
     public int getId() {
         return id;
+    }
+
+    public static int getNextId() {
+        return nextId;
+    }
+
+    public static void incrementNextId() {
+        nextId += 10;
     }
 
     public String getFirstname() {

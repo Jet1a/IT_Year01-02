@@ -26,29 +26,28 @@ public class Utilitor {
         return value;
     }
 
-    public double testPositive(double value) {
+    public static double testPositive(double value) {
         if (value < 0) throw new IllegalArgumentException("The value is negative");
         return value;
     }
 
-        public long computeIsbn10(long isbn10) {
+    public long computeIsbn10(long isbn10) {
 
-        if (String.valueOf(isbn10).length() != 10) {
+        if (String.valueOf(isbn10).length() != 9) {
             throw new IllegalArgumentException("ISBN-10 should be a 10-digit number.");
         }
 
         String stringIsbn = String.valueOf(isbn10);
         int sum = 0;
 
-        for (int i = 0; i < stringIsbn.length(); i++) {
+        for (int i = 0; i < 9; i++) {
             int digit = Character.getNumericValue(stringIsbn.charAt(i));
-            sum += (i+1) * digit;
+            sum += (i + 1) * digit;
         }
 
         int remain = sum % 11;
-        int check = (remain == 0) ? 0 : 11 - remain;
 
-        return isbn10 + check;
+        return (remain == 0) ? 0 : 11 - remain;
 
     }
 }

@@ -2,6 +2,7 @@ package int101.homework02;
 
 import work01Utilitor.Utilitor;
 import work02Person.Person;
+import work03Account.Account;
 
 public class Int101Homework02 {
 
@@ -47,8 +48,8 @@ public class Int101Homework02 {
 
         System.out.println("--------------- 1.4 -------------------" + '\n');
 
-        System.out.println("Valid of 1000000000 ISBN-10: " + utilitor.computeIsbn10(10_000_000_00) + '\n');
-        System.out.println("Valid of 1455338095 ISBN-10: " + utilitor.computeIsbn10(14_553_380_95) + '\n');
+        System.out.println("Check Digits of 1000000000 ISBN-10: " + utilitor.computeIsbn10(100_000_000) + '\n');
+        System.out.println("Check Digits of 1455338095 ISBN-10: " + utilitor.computeIsbn10(153_380_954) + '\n');
 //        System.out.println("Valid of 1455338095 ISBN-10: " +utilitor.computeIsbn10(9_999_999_99));
 
     }
@@ -101,7 +102,7 @@ public class Int101Homework02 {
 
         System.out.println("--------------- 2.10 -------------------" + '\n');
 
-        System.out.println("Person1 equals Person2: " + person1.equals(person2)); //cause id != id
+        System.out.println("Person1 equals Person2: " + person1.equals(person2) + '\n'); //cause id != id
 
     }
 
@@ -147,5 +148,37 @@ public class Int101Homework02 {
             (i.e., the same reference). Otherwise, it returns false.
        3.13 Show in this "work03Account" method how to use 3.6-3.12
             and check their correctness. */
+        System.out.println("--------------- 3.6 -------------------" + '\n');
+        Person personA = new Person("Andy","Carol");
+        Person personB = new Person("Carlos", "Puyol");
+        Account account1 = new Account(personA);
+        Account account2 = new Account(personB);
+        System.out.println(account1);
+        System.out.println(account2 + "\n");
+        System.out.println("--------------- 3.7 -------------------" + '\n');
+
+        System.out.println(account1.getOwner() + "\n");
+
+        System.out.println("--------------- 3.8 -------------------" + '\n');
+
+        System.out.println("Deposit 10000$: " + account1.deposit(10000.00));
+        System.out.println("Account 1 balance: " + account1.getBalance()  + '\n');
+
+        System.out.println("--------------- 3.9 -------------------" + '\n');
+
+        System.out.println("Withdraw 2500$: " + account1.withdraw(2500.00));
+        System.out.println("Account 1 balance: " + account1.getBalance() + '\n');
+
+        System.out.println("--------------- 3.10 -------------------" + '\n');
+        System.out.println("Before | Account1 balance: " + account1.getBalance() + " , Account2 balance: " + account2.getBalance());
+        account1.transfer(5000.00,account2);
+        System.out.println("Transfer 5000$ account1 -> account2");
+        System.out.println("After | Account1 balance: " + account1.getBalance() + " , Account2 balance: " + account2.getBalance() + "\n");
+
+        System.out.println("--------------- 3.11 / 3.12 -------------------" + '\n');
+
+        System.out.println(account1);
+        System.out.println(account2);
+        System.out.println("Equals: " + account1.equals(account2));
     }
 }
